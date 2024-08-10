@@ -12,7 +12,7 @@ from sahi.utils.yolov8 import download_yolov8s_model
 # Define paths for available YOLO models
 model_paths = {
     "YOLOv8": "model/bestModelx8.pt",
-    "YOLOv5": "model/bestModelx5.pt"
+   
 }
 
 # Function to download and load the YOLOv8 model
@@ -27,15 +27,7 @@ def load_yolov8_model(model_path):
         device=device
     )
 
-# Function to load the YOLOv5 model
-def load_yolov5_model(model_path):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    return AutoDetectionModel.from_pretrained(
-        model_type='yolov5',
-        model_path=model_path,
-        confidence_threshold=0.50,
-        device=device
-    )
+
 
 # Container for the main content
 with st.container():
@@ -120,3 +112,5 @@ with st.container():
             st.image("demo_data/prediction_visual.png", caption="YOLO and SAHI Prediction", use_column_width=True)
         else:
             st.text("Please upload an image first.")
+
+
