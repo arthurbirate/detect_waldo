@@ -21,7 +21,7 @@ def load_yolov8_model(model_path):
     return AutoDetectionModel.from_pretrained(
         model_type='yolov8',
         model_path=model_path,
-        confidence_threshold=0.60,
+        confidence_threshold=0.55,
         device=device
     )
 
